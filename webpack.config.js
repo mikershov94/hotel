@@ -29,6 +29,28 @@ module.exports = {
                 loader: 'babel-loader',
             },
 
+            {
+                test: /\.sass$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: { sourceMap: true }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            config: { path: __dirname }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: { sourceMap: true }
+                    },
+                ]
+            },
+
 
         ],
     },
@@ -42,6 +64,9 @@ module.exports = {
             template: './public/index.html',
             filename: 'index.html',
         }),
+        new MiniCssExtractPlugin({
+            filename: 'css/main-[hash:7].css'
+        })
     ],
 
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./app.sass";
 
 class App extends React.Component {
     
