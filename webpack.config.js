@@ -11,12 +11,12 @@ const PATHS = {
 module.exports = {
 
     entry: {
-        app: './src/index.js'
+        app: PATHS.src + '/index.js'
     },
 
     output: {
         filename: 'js/app-[hash:7].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: PATHS.dist,
         publicPath: ''
     },
 
@@ -69,6 +69,30 @@ module.exports = {
                 ],
             },
 
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '/obj/[name].[ext]',
+                        }
+                    },
+                ],
+            },
+
+            {
+                test: /\.(png|gif|jpg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '/img/[name].[ext]',
+                        }
+                    },
+                ],
+            },
+
 
         ],
     },
@@ -86,7 +110,10 @@ module.exports = {
             filename: 'css/main-[hash:7].css'
         }),
         new CopyWebpackPlugin([
-            { from: './public/fonts', to: `${PATHS.dist}/fonts` }
+            { from: './public/fonts', to: `${PATHS.dist}/fonts` },
+            { from: './public/icons', to: `${PATHS.dist}/obj` },
+            { from: './public/img', to: `${PATHS.dist}/img` },
+            { from: './public/objects', to: `${PATHS.dist}/obj` }
         ]),
     ],
 
