@@ -1,16 +1,14 @@
 import React from 'react';
 import "../../main.sass";
 
+import Image from '../image';
+
 class App extends React.Component {
     
     render() {
         return(
             <div>
-                <Header />
                 <Image />
-                <MainTitle />
-                <Price />
-                <Order />
             </div>
         )
     }
