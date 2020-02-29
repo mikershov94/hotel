@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavItem = ({ title }) => {
     return(
-        <div className="menu__item" >{title}</div>
+        <div className="nav__item" >{title}</div>
     );
 };
 

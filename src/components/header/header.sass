@@ -1,11 +1,23 @@
-@import "../nav-item/nav-item.sass"
+@import "../nav-item/nav-item.sass";
+@import "../phone-button/phone-button.sass";
 
 =headerClass()
-    .menu
+    .nav
         display: flex
-        height: auto
+        align-items: center
         font-family: BebasNeueRegular
         font-size: 1.5em
 
+        &__menu
+            display: flex
+            align-items: center
+            width: 34.9rem
+            justify-content: space-around
+            margin: 0 1.2rem
+            height: 6rem
+
         &__item
             +navItemClass()
+
+        &__phone
+            +phoneClass()
