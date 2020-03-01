@@ -3,6 +3,7 @@ import "../../main.sass";
 
 import Image from '../image';
 import Header from '../header';
+import MainTitle from '../main-title';
 
 class App extends React.Component {
     constructor() {
@@ -29,6 +30,7 @@ class App extends React.Component {
                     <Header dropdownOpen={this.dropdownOpen}
                             dropdownClose={this.dropdownClose}
                             dropdownOpened={this.state.dropdownOpened} />
+                    <MainTitle />
                 </div>
             </div>
         )
