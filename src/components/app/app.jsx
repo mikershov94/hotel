@@ -5,6 +5,7 @@ import Image from '../image';
 import Header from '../header';
 import MainTitle from '../main-title';
 import Price from '../price';
+import Order from '../order';
 
 class App extends React.Component {
     constructor() {
@@ -34,6 +35,7 @@ class App extends React.Component {
                     <MainTitle />
                     <Price />
                 </div>
+                <Order />
             </div>
         )
     }
