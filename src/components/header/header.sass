@@ -1,12 +1,14 @@
 @import "../nav-item/nav-item.sass";
 @import "../phone-button/phone-button.sass";
+@import "../dropdown-menu/dropdown-menu.sass";
 
 =headerClass()
     .nav
+        position: relative
         display: flex
         align-items: center
         font-family: BebasNeueRegular
-        font-size: 2.3em
+        font-size: 1.5rem
 
         &__menu
             display: flex
@@ -22,3 +24,5 @@
 
         &__phone
             +phoneClass()
+
+    +dropdownClass()

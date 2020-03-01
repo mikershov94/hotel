@@ -5,13 +5,30 @@ import Image from '../image';
 import Header from '../header';
 
 class App extends React.Component {
+    constructor() {
+        super()
+
+        this.state = {
+            dropdownOpened: false,
+        };
+
+        this.dropdownOpen = (e) => {
+            this.setState({ dropdownOpened: true })
+        };
+
+        this.dropdownClose = (e) => {
+            this.setState({ dropdownOpened: false })
+        };
+    }
     
     render() {
         return(
             <div>
                 <Image />
                 <div className="col-right">
-                    <Header />
+                    <Header dropdownOpen={this.dropdownOpen}
+                            dropdownClose={this.dropdownClose}
+                            dropdownOpened={this.state.dropdownOpened} />
                 </div>
             </div>
         )
