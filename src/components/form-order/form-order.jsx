@@ -44,8 +44,12 @@ class FormOrder extends React.Component {
                                 dateFormat="dd.MM.yyyy"
                                 className="order__date-input" />
                 </div>
-                <input className="order__guests-input"
-                       type="text"/>
+                <div className="order__input-container order__input-container_guests">
+                    <object className="order__user" type="image/svg+xml" data="/obj/user.svg"></object>
+                    <span className="order__input-label order__input-label_guests">Гости</span>
+                    <input className="order__guests-input"
+                           type="text" value="1"/>
+                </div>
                 <button className="order__submit">Найти номер</button>
             </form>
         )

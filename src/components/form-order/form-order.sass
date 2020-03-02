@@ -7,10 +7,14 @@
 
     &__input-container
         position: relative
-        height: 2.8rem
+        height: 2.9rem
         width: 10rem
         background-color: white
         border-radius: 0.3rem
+
+        &_guests
+            width: 5.3rem
+
 
     &__date-input
         position: absolute
@@ -38,18 +42,29 @@
         top: 0.4rem
         left: 3.2rem
         text-transform: capitalize
+
+        &_guests
+            left: 2.5rem
         
 
     &__guests-input
+        position: absolute
+        top: 0.9rem
+        left: 3.2rem
         font-family: Montserrat, sans-serif
         font-size: 1.1rem
         font-weight: bold
         color: $black
-        height: 2.8rem
-        width: 5.3rem
+        height: 1.8rem
+        width: 1rem
         outline: none
         border: none
-        border-radius: 0.3rem
+        background: none
+
+    &__user
+        position: absolute
+        top: 0.8rem
+        left: 0.59rem
 
     &__submit
         font-family: Montserrat, sans-serif
