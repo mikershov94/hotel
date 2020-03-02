@@ -1,3 +1,5 @@
+@import "../form-order/form-order.sass";
+
 =orderClass()
     .order
         margin-left: 33.5rem
@@ -9,4 +11,15 @@
     
         &__content
             height: 3.9rem
+            width: 86.5rem
             background-color: $brown-light
+            font-family: BebasNeueRegular, sans-serif
+            display: flex
+            align-items: center
+
+        &__label
+            margin-left: 2.4rem
+            margin-right: 1.9rem
+            font-size: 1.9rem
+
+        +formOrderClass()
