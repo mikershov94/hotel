@@ -29,12 +29,16 @@ class FormOrder extends React.Component {
         return(
             <form className="order__form">
                 <div className="order__input-container">
+                    <object className="order__calendar" type="image/svg+xml" data="/obj/calendar.svg"></object>
+                    <span className="order__input-label">Заезд</span>
                     <DatePicker selected={this.state.startDate}
                                 onChange={this.handleChangeStart}
                                 dateFormat="dd.MM.yyyy"
                                 className="order__date-input" />
                 </div>
                 <div className="order__input-container">
+                    <object className="order__calendar" type="image/svg+xml" data="/obj/calendar.svg"></object>
+                    <span className="order__input-label">Выезд</span>
                     <DatePicker selected={this.state.endDate}
                                 onChange={this.handleChangeEnd}
                                 dateFormat="dd.MM.yyyy"
