@@ -9,7 +9,8 @@ class FormOrder extends React.Component {
         super();
         this.state = {
             startDate: new Date(),
-            endDate: new Date()
+            endDate: new Date(),
+            guests: 1
         };
         
         this.handleChangeStart = date => {
@@ -23,11 +24,23 @@ class FormOrder extends React.Component {
                 endDate: date,
             });
         };
+
+        this.onChangeGuests = (e) => {
+            this.setState({
+                guests: e.target.value
+            })
+        }
+
+        this.onFormSubmit = e => {
+            e.preventDefault();
+
+            this.props.findRooms(this.state);
+        };
     }
     
     render() {
         return(
-            <form className="order__form">
+            <form className="order__form" onSubmit={this.onFormSubmit}>
                 <div className="order__input-container">
                     <object className="order__calendar" type="image/svg+xml" data="/obj/calendar.svg"></object>
                     <span className="order__input-label">Заезд</span>
@@ -48,9 +61,12 @@ class FormOrder extends React.Component {
                     <object className="order__user" type="image/svg+xml" data="/obj/user.svg"></object>
                     <span className="order__input-label order__input-label_guests">Гости</span>
                     <input className="order__guests-input"
-                           type="text" value="1"/>
+                           type="text" 
+                           onChange={this.onChangeGuests}
+                           value={this.state.guests} />
                 </div>
-                <button className="order__submit">Найти номер</button>
+                <button className="order__submit" 
+                        onClick={this.onFormSubmit}>Найти номер</button>
             </form>
         )
     }

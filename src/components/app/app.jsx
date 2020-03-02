@@ -22,6 +22,16 @@ class App extends React.Component {
         this.dropdownClose = (e) => {
             this.setState({ dropdownOpened: false })
         };
+
+        this.findRooms = (data) => {
+            console.log(data)
+            const startDate = String(data.startDate.getDate()) + '.' + String(data.startDate.getMonth() + 1) + '.' + String(data.startDate.getFullYear())
+            const endDate = String(data.endDate.getDate()) + '.' + String(data.endDate.getMonth() + 1) + '.' + String(data.endDate.getFullYear())
+
+            //заглушка
+            //функция должна отбравлять данные на сервер
+            alert('Поиск номеров для проживания ' + data.guests + ' гостей ' + 'в период с ' + startDate + ' по ' + endDate);
+        };
     }
     
     render() {
@@ -35,7 +45,7 @@ class App extends React.Component {
                     <MainTitle />
                     <Price />
                 </div>
-                <Order />
+                <Order findRooms={this.findRooms} />
             </div>
         )
     }
